@@ -1,4 +1,5 @@
 require "date"
+require "fileutils"
 require "active_support/core_ext/string/inflections"
 
 module MetricsSatellite
@@ -20,7 +21,9 @@ module MetricsSatellite
     end
 
     def directory
-      File.expand_path("../../../../../#{name}", __FILE__)
+      File.expand_path("../../../../reports/#{name}", __FILE__).tap do |path|
+        FileUtils.mkdir_p(path)
+      end
     end
 
     def filename
@@ -36,7 +39,7 @@ module MetricsSatellite
     end
 
     def name
-      self.class.to_s.underscore
+      self.class.to_s.split("::").last.underscore
     end
 
     def ext
