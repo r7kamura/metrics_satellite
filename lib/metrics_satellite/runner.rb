@@ -4,8 +4,8 @@ module MetricsSatellite
       new.run
     end
 
-    def run
-      case ARGV[0]
+    def run(argv = ARGV)
+      case argv[0]
       when "collect"
         in_app_direcotry { run_commands }
       else
