@@ -1,4 +1,6 @@
 require "metrics_satellite/version"
+require "metrics_satellite/option_parser"
+require "metrics_satellite/runner"
 require "metrics_satellite/commands/command"
 require "metrics_satellite/commands/brakeman"
 require "metrics_satellite/commands/flay"
