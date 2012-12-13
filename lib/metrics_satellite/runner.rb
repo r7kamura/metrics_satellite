@@ -7,7 +7,9 @@ module MetricsSatellite
     def run(argv = ARGV)
       case argv[0]
       when "collect"
-        in_app_direcotry { run_commands }
+        collect_reports
+      when "post"
+        post_reports
       else
         exit
       end
@@ -15,8 +17,8 @@ module MetricsSatellite
 
     private
 
-    def run_commands
-      commands.each(&:run)
+    def collect_reports
+      in_app_direcotry { commands.each(&:run) }
     end
 
     def commands
