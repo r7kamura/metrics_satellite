@@ -16,4 +16,15 @@ Gem::Specification.new do |gem|
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+  gem.add_dependency "activesupport"
+  gem.add_dependency "brakeman"
+  gem.add_dependency "flay"
+  gem.add_dependency "hotspots"
+  gem.add_dependency "rails_best_practices"
+  gem.add_dependency "rake"
+  gem.add_dependency "guideline", "~> 0.2.0"
+
+  gem.add_development_dependency "rspec", "2.12.0"
+  gem.add_development_dependency "simplecov"
 end
