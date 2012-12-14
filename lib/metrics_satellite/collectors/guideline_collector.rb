@@ -1,5 +1,5 @@
 module MetricsSatellite
-  class Guideline < Command
+  class GuidelineCollector < Collector
     def run
       system(
         "guideline",

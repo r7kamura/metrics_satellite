@@ -1,5 +1,5 @@
 module MetricsSatellite
-  class Hotspots < Command
+  class HotspotsCollector < Collector
     def run
       system(
         "hotspots",

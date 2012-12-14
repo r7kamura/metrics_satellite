@@ -3,7 +3,7 @@ require "fileutils"
 require "active_support/core_ext/string/inflections"
 
 module MetricsSatellite
-  class Command
+  class Collector
     EXT = "txt"
 
     def self.run

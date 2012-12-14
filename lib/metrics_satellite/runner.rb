@@ -18,16 +18,16 @@ module MetricsSatellite
     private
 
     def collect_reports
-      in_app_direcotry { commands.each(&:run) }
+      in_app_direcotry { collectors.each(&:run) }
     end
 
-    def commands
+    def collectors
       [
-        Brakeman,
-        Flay,
-        Guideline,
-        Hotspots,
-        RailsBestPractices,
+        BrakemanCollector,
+        FlayCollector,
+        GuidelineCollector,
+        HotspotsCollector,
+        RailsBestPracticesCollector,
       ]
     end
 

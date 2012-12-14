@@ -23,12 +23,12 @@ module MetricsSatellite
           ["collect"]
         end
 
-        let(:commands) do
-          runner.send(:commands)
+        let(:collectors) do
+          runner.send(:collectors)
         end
 
-        it "call #run for each command class" do
-          commands.each {|command| command.should_receive(:run) }
+        it "call #run for each collector class" do
+          collectors.each {|collector| collector.should_receive(:run) }
           subject
         end
       end

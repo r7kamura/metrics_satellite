@@ -1,5 +1,5 @@
 module MetricsSatellite
-  class Flay < Command
+  class FlayCollector < Collector
     def run
       system("flay", :out => file)
     end

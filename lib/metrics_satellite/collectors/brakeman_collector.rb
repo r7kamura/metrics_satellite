@@ -1,5 +1,5 @@
 module MetricsSatellite
-  class Brakeman < Command
+  class BrakemanCollector < Collector
     EXT = "html"
 
     def run

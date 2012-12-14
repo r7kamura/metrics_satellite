@@ -1,5 +1,5 @@
 module MetricsSatellite
-  class RailsBestPractices < Command
+  class RailsBestPracticesCollector < Collector
     EXT = "html"
 
     def run
