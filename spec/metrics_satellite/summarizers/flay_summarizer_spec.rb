@@ -27,11 +27,7 @@ module MetricsSatellite
         100
       end
 
-      it "creates an instance of Summary" do
-        should be_a Summary
-      end
-
-      it "passes extracted total score to Summary.new" do
+      it "creates summary of Flay" do
         subject.total_score.should == total_score
       end
     end

@@ -4,7 +4,6 @@ module MetricsSatellite
       system(
         "guideline",
         "--no-unused-method",
-        "--no-trailing-whitespace",
         "--abc-complexity", "100",
         "--long-method", "100",
         "--long-line", "160",

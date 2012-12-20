@@ -8,11 +8,15 @@ module MetricsSatellite
     private
 
     def first_line
-      pathname.each_line.to_a[0]
+      lines[0]
     end
 
     def total_score
       first_line[/\d+$/].to_i
+    end
+
+    def lines
+      pathname.each_line.to_a
     end
   end
 end
