@@ -25,9 +25,9 @@ module MetricsSatellite
       mock(:exist? => true)
     end
 
-    describe "#summarize" do
+    describe "#create" do
       subject do
-        summarizer.summarize
+        summarizer.send(:create)
       end
 
       it "creates summary of Guideline" do

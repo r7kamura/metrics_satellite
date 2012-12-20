@@ -6,9 +6,9 @@ module MetricsSatellite
       described_class.new
     end
 
-    describe "#summarize" do
+    describe "#create" do
       subject do
-        summarizer.summarize
+        summarizer.send(:create)
       end
 
       before do
