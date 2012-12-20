@@ -28,16 +28,14 @@ module MetricsSatellite
           <body>
             <h2 id="summary"></h2>
             <table>
-              <tbody>
-                <tr>
-                  <td>Scanned/Reported</td>
-                  <td>total</td>
-                </tr>
-                <tr>
-                  <td>Security Warnings</td>
-                  <td>#{count}</td>
-                </tr>
-              </tbody>
+              <tr>
+                <td>Scanned/Reported</td>
+                <td>total</td>
+              </tr>
+              <tr>
+                <td>Security Warnings</td>
+                <td>#{count}</td>
+              </tr>
             </table>
           </body>
           </html>

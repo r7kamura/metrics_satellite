@@ -20,8 +20,9 @@ module MetricsSatellite
     end
 
     def count_node_parent
-      tree.css("#summary + table > tbody > tr").detect do |tr|
-        tr.css("td")[0].text =~ /Security Warnings/
+      tree.css("#summary + table tr").detect do |tr|
+        td = tr.css("td")
+        td && td.text =~ /Security Warnings/
       end
     end
 
