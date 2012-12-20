@@ -1,3 +1,4 @@
+require "date"
 require "pathname"
 require "active_support/core_ext/string/inflections"
 
