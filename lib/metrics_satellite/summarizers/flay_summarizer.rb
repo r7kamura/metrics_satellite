@@ -1,17 +1,16 @@
 module MetricsSatellite
   class FlaySummarizer < Summarizer
-    def summarize
-      super
-      Summary.new(:total_score => total_score)
-    end
-
     private
+
+    def create
+      { :count => count }
+    end
 
     def first_line
       lines[0]
     end
 
-    def total_score
+    def count
       first_line[/\d+$/].to_i
     end
 

@@ -28,7 +28,7 @@ module MetricsSatellite
       end
 
       it "creates summary of Flay" do
-        subject.total_score.should == total_score
+        subject[:count].should == total_score
       end
     end
   end

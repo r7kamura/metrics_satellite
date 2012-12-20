@@ -47,7 +47,7 @@ module MetricsSatellite
       end
 
       it "creates summary of Brakeman" do
-        subject.count.should == count
+        subject[:count].should == count
       end
     end
   end

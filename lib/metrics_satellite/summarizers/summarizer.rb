@@ -1,6 +1,4 @@
 module MetricsSatellite
-  # Abstract class to summarize the result of Metrics tool.
-  # This class has `.summarize` method to return an instance of `Summary` class.
   class Summarizer
     include Filer
 
@@ -10,9 +8,14 @@ module MetricsSatellite
 
     def summarize
       raise ReportNotFoundError, "Report is not found for #{self.class}" unless report_exist?
+      create
     end
 
     private
+
+    def create
+      raise "Implement #{self.class}#create"
+    end
 
     def report_exist?
       pathname.exist?

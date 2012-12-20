@@ -1,8 +1,9 @@
 module MetricsSatellite
   class HotspotsSummarizer < Summarizer
-    def summarize
-      super
-      Summary.new(:count => pathname.readlines.size)
+    private
+
+    def create
+      { :count => pathname.readlines.count }
     end
   end
 end

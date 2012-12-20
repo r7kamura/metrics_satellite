@@ -4,12 +4,11 @@ module MetricsSatellite
   class BrakemanSummarizer < Summarizer
     EXT = "html"
 
-    def summarize
-      super
-      Summary.new(:count => count)
-    end
-
     private
+
+    def create
+      { :count => count }
+    end
 
     def count
       count_node.text.strip.to_i

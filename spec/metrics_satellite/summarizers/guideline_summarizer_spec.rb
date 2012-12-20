@@ -31,10 +31,9 @@ module MetricsSatellite
       end
 
       it "creates summary of Guideline" do
-        should be_a Summary
-        subject.abc_complexity.should == 1
-        subject.long_line.should      == 2
-        subject.long_method.should    == 3
+        subject[:abc_complexity].should == 1
+        subject[:long_line].should      == 2
+        subject[:long_method].should    == 3
       end
     end
 
@@ -49,20 +48,6 @@ module MetricsSatellite
           LongLineChecker: 2
           LongMethodChecker: 3
         EOF
-      end
-    end
-
-    describe "#parsed_lines" do
-      subject do
-        summarizer.send(:parsed_lines)
-      end
-
-      it "returns Hash of parsed data" do
-        should == {
-          :abc_complexity => 1,
-          :long_line      => 2,
-          :long_method    => 3,
-        }
       end
     end
   end

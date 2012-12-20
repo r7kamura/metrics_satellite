@@ -1,13 +1,8 @@
 module MetricsSatellite
   class GuidelineSummarizer < Summarizer
-    def summarize
-      super
-      Summary.new(parsed_lines)
-    end
-
     private
 
-    def parsed_lines
+    def create
       summarized_lines.inject({}) do |hash, line|
         matched, name, count = *line.match(/(.+)Checker: (\d+)/)
         if matched

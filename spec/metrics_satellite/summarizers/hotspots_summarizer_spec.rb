@@ -28,7 +28,7 @@ module MetricsSatellite
       end
 
       it "creates summary of Hotspots" do
-        subject.count.should == count
+        subject[:count].should == count
       end
     end
   end

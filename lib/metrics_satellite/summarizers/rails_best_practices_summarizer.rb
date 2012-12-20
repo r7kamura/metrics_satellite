@@ -2,12 +2,11 @@ module MetricsSatellite
   class RailsBestPracticesSummarizer < Summarizer
     EXT = "html"
 
-    def summarize
-      super
-      Summary.new(:count => count)
-    end
-
     private
+
+    def create
+      { :count => count }
+    end
 
     def count
       matched, count_text = *count_node.text.match(/(\d+)/)
