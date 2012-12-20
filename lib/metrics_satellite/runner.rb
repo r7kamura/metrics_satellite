@@ -18,7 +18,11 @@ module MetricsSatellite
     private
 
     def collect_reports
-      in_app_direcotry { collectors.each(&:run) }
+      in_app_direcotry do
+        collectors.each do |klass|
+          klass.new(options).run
+        end
+      end
     end
 
     def post_reports

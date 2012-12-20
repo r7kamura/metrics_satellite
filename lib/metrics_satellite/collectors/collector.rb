@@ -5,12 +5,14 @@ module MetricsSatellite
   class Collector
     include Filer
 
-    def self.run
-      new.run
-    end
+    attr_reader :options
 
     def self.underscore
       to_s.underscore.split("/").last
+    end
+
+    def initialize(options = {})
+      @options = options
     end
   end
 end

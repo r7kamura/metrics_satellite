@@ -6,13 +6,6 @@ module MetricsSatellite
       described_class.new
     end
 
-    describe ".run" do
-      it "creates its instance and call #run" do
-        described_class.any_instance.should_receive(:run)
-        described_class.run
-      end
-    end
-
     describe "#run" do
       subject(:run) do
         runner.run(argv)
@@ -28,7 +21,9 @@ module MetricsSatellite
         end
 
         it "call #run for each collector class" do
-          collectors.each {|collector| collector.should_receive(:run) }
+          collectors.each do |collector|
+            collector.any_instance.should_receive(:run)
+          end
           subject
         end
       end
