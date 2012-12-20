@@ -1,8 +1,14 @@
+require "active_support/core_ext/string/inflections"
+
 module MetricsSatellite
   module Filer
     EXT = "txt"
 
     private
+
+    def pathname
+      Pathname.new(filepath)
+    end
 
     def filepath
       "#{directory}/#{filename}"
@@ -27,7 +33,8 @@ module MetricsSatellite
     end
 
     def name
-      self.class.to_s.split("::").last.underscore
+      self.class.to_s.split("::").last.
+        gsub(/Summarizer$|Collector$/, "").underscore
     end
 
     def ext

@@ -11,8 +11,28 @@ module MetricsSatellite
         summarizer.summarize
       end
 
-      it do
+      before do
+        summarizer.stub(:pathname => pathname)
+      end
+
+      let(:pathname) do
+        mock(:each_line => each_line, :exist? => true)
+      end
+
+      let(:each_line) do
+        ["Total score (lower is better) = #{total_score}\n"]
+      end
+
+      let(:total_score) do
+        100
+      end
+
+      it "creates an instance of Summary" do
         should be_a Summary
+      end
+
+      it "passes extracted total score to Summary.new" do
+        subject.total_score.should == total_score
       end
     end
   end

@@ -1,6 +1,5 @@
 require "date"
 require "fileutils"
-require "active_support/core_ext/string/inflections"
 
 module MetricsSatellite
   class Collector

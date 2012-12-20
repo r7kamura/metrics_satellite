@@ -9,7 +9,15 @@ module MetricsSatellite
     end
 
     def summarize
-      raise "Implement `#summarize` method"
+      raise ReportNotFoundError unless report_exist?
     end
+
+    private
+
+    def report_exist?
+      pathname.exist?
+    end
+
+    class ReportNotFoundError < StandardError; end
   end
 end
