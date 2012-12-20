@@ -9,7 +9,7 @@ module MetricsSatellite
     end
 
     def summarize
-      raise ReportNotFoundError unless report_exist?
+      raise ReportNotFoundError, "Report is not found for #{self.class}" unless report_exist?
     end
 
     private
