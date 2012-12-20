@@ -5,6 +5,7 @@ module MetricsSatellite
     EXT = "html"
 
     def summarize
+      super
       Summary.new(:count => count)
     end
 

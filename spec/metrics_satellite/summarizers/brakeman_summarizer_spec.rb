@@ -22,7 +22,7 @@ module MetricsSatellite
       let(:content) do
         <<-EOF
           <!DOCTYPE HTML>
-          <html lang="ja">
+          <html>
           <head>
           </head>
           <body>
