@@ -4,9 +4,9 @@ module MetricsSatellite
       system(
         "guideline",
         "--no-unused-method",
-        "--abc-complexity", "100",
-        "--long-method", "100",
-        "--long-line", "160",
+        "--abc-complexity", "15",
+        "--long-method", "30",
+        "--long-line", "128",
         :out => file
       )
     end
