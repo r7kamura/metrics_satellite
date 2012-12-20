@@ -7,7 +7,7 @@ module MetricsSatellite
     end
 
     describe ".run" do
-      subject(:run) do
+      subject do
         runner.run
       end
 
