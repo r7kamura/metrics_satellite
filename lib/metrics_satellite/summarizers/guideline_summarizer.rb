@@ -23,7 +23,7 @@ module MetricsSatellite
     end
 
     def lines
-      pathname.each_line.to_a
+      pathname.readlines
     end
   end
 end

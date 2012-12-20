@@ -1,7 +1,7 @@
 require "spec_helper"
 
 module MetricsSatellite
-  describe FlaySummarizer do
+  describe HotspotsSummarizer do
     let(:summarizer) do
       described_class.new
     end
@@ -20,15 +20,15 @@ module MetricsSatellite
       end
 
       let(:lines) do
-        ["Total score (lower is better) = #{total_score}\n"]
+        count.times.to_a
       end
 
-      let(:total_score) do
-        100
+      let(:count) do
+        10
       end
 
-      it "creates summary of Flay" do
-        subject.total_score.should == total_score
+      it "creates summary of Hotspots" do
+        subject.count.should == count
       end
     end
   end
