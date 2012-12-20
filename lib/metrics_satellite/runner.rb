@@ -1,11 +1,17 @@
 module MetricsSatellite
   class Runner
+    attr_reader :options
+
     def self.run
       new.run
     end
 
-    def run(argv = ARGV)
-      case argv[0]
+    def initialize(argv = ARGV)
+      @options = OptionParser.parse!(argv)
+    end
+
+    def run
+      case type
       when "collect"
         collect_reports
       when "post"
@@ -57,29 +63,33 @@ module MetricsSatellite
       options[:app] || "."
     end
 
-    def options
-      @options ||= OptionParser.parse!
-    end
-
     def exit
       puts OptionParser.help
       super
     end
 
     def summaries
-      summarizers.map(&:summarize)
+      summarizers.map(&:summarize).inject({}, &:merge)
     end
 
     def reporter
-      Reporter.new(server_url, service_name)
+      Reporter.new(host, service, section)
     end
 
-    def server_url
-      options[:server_url] || exit
+    def type
+      options[:type] || exit
     end
 
-    def service_name
-      options[:service_name] || "metrics"
+    def host
+      options[:host] || exit
+    end
+
+    def service
+      options[:service] || "development"
+    end
+
+    def section
+      options[:section] || "metrics"
     end
   end
 end

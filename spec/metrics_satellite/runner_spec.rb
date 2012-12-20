@@ -3,17 +3,17 @@ require "spec_helper"
 module MetricsSatellite
   describe Runner do
     let(:runner) do
-      described_class.new
+      described_class.new(argv)
     end
 
-    describe "#run" do
+    describe ".run" do
       subject(:run) do
-        runner.run(argv)
+        runner.run
       end
 
-      context "when ARGV[0] is collect" do
+      context "when type is collect" do
         let(:argv) do
-          ["collect"]
+          %w[--type collect --host example.com]
         end
 
         let(:collectors) do
@@ -24,17 +24,6 @@ module MetricsSatellite
           collectors.each do |collector|
             collector.any_instance.should_receive(:run)
           end
-          subject
-        end
-      end
-
-      context "when ARGV[0] is unexpected value" do
-        let(:argv) do
-          ["unexpected value"]
-        end
-
-        it "exits" do
-          runner.should_receive(:exit)
           subject
         end
       end
