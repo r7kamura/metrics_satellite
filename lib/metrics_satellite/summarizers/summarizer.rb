@@ -13,10 +13,8 @@ module MetricsSatellite
     end
 
     def summarize
-      raise ReportNotFoundError, "Report is not found for #{self.class}" unless report_exist?
-      create.inject({}) do |hash, (key, value)|
-        hash.merge([type, key].join("_").to_sym => value)
-      end
+      validate_report_existence
+      create_merged_summaries
     end
 
     private
@@ -31,6 +29,16 @@ module MetricsSatellite
 
     def report_exist?
       pathname.exist?
+    end
+
+    def create_merged_summaries
+      create.inject({}) do |hash, (key, value)|
+        hash.merge([type, key].join("_").to_sym => value)
+      end
+    end
+
+    def validate_report_existence
+      raise ReportNotFoundError, "Report is not found for #{self.class}" unless report_exist?
     end
 
     class ReportNotFoundError < StandardError; end
