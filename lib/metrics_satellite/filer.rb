@@ -37,8 +37,11 @@ module MetricsSatellite
     end
 
     def name
-      self.class.to_s.split("::").last.
-        gsub(/Summarizer$|Collector$/, "").underscore
+      single_class_name.gsub(/Summarizer$|Collector$/, "").underscore
+    end
+
+    def single_class_name
+      self.class.to_s.split("::").last
     end
 
     def ext
