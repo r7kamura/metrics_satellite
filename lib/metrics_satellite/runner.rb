@@ -85,11 +85,11 @@ module MetricsSatellite
     end
 
     def service
-      options[:service] || "development"
+      options[:service] || "metrics"
     end
 
     def section
-      options[:section] || "metrics"
+      options[:section] || "section"
     end
   end
 end

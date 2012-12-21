@@ -3,12 +3,12 @@ require "optparse"
 module MetricsSatellite
   class OptionParser < ::OptionParser
     OPTIONS = [
-      "--type=",    "(default:           -) 'collect' or 'post'",
-      "--host=",    "(default:           -) GrowthForecast host to send report",
-      "--service=", "(default: development) GrowthForecast service name",
-      "--section=", "(default:     metrics) GrowthForecast section name",
-      "--git=",     "(default:          ./) git repository directory",
-      "--app=",     "(default:          ./) application directory",
+      "--type=",    "(default:       -) 'collect' or 'post'",
+      "--host=",    "(default:       -) GrowthForecast host to send report",
+      "--service=", "(default: metrics) GrowthForecast service name",
+      "--section=", "(default: section) GrowthForecast section name",
+      "--git=",     "(default:      ./) git repository directory",
+      "--app=",     "(default:      ./) application directory",
     ]
 
     def self.parse!(argv)
