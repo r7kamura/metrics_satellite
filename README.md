@@ -1,29 +1,27 @@
 # MetricsSatellite
+Collect metrics and Report summaries.
 
-TODO: Write a gem description
+## Requirements
+* Ruby >= 1.9
 
 ## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'metrics_satellite'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install metrics_satellite
+```
+$ git clone git@github.cookpad.com:ryo-nakamura/metrics_satellite.git
+$ cd metrics_satellite
+$ bundle install
+```
 
 ## Usage
+```
+$ ./bin/metrics_satellite
+Usage: metrics_satellite [options]
+        --type=                      (default:           -) 'collect' or 'post'
+        --host=                      (default:           -) GrowthForecast host to send report
+        --service=                   (default: development) GrowthForecast service name
+        --section=                   (default:     metrics) GrowthForecast section name
+        --git=                       (default:          ./) git repository directory
+        --app=                       (default:          ./) application directory
 
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+$ ./bin/metrics_satellite --type collect
+$ ./bin/metrics_satellite --type post --host growthforecast.example.com
+```
