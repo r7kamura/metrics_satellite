@@ -9,6 +9,7 @@ module MetricsSatellite
       "--section=", "(default: section) GrowthForecast section name",
       "--git=",     "(default:      ./) git repository directory",
       "--app=",     "(default:      ./) application directory",
+      "--reports=", "(default: reports) collected reports directory",
     ]
 
     def self.parse!(argv)

@@ -17,7 +17,7 @@ module MetricsSatellite
     end
 
     def directory
-      File.expand_path("../../../reports/#{name}", __FILE__)
+      Pathname.new(reports).join(name)
     end
 
     def create_directory
@@ -43,6 +43,10 @@ module MetricsSatellite
 
     def ext
       self.class::EXT
+    end
+
+    def reports
+      options[:reports] || "reports"
     end
   end
 end
