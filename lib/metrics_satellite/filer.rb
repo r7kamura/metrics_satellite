@@ -37,7 +37,11 @@ module MetricsSatellite
     end
 
     def name
-      single_class_name.gsub(/Summarizer$|Collector$/, "").underscore
+      tool_name.underscore
+    end
+
+    def tool_name
+      single_class_name.gsub(/Summarizer$|Collector$/, "")
     end
 
     def single_class_name

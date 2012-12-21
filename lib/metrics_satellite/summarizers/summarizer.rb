@@ -38,7 +38,7 @@ module MetricsSatellite
     end
 
     def validate_report_existence
-      raise ReportNotFoundError, "Report is not found for #{self.class}" unless report_exist?
+      raise ReportNotFoundError, "Report for #{tool_name} is not found" unless report_exist?
     end
 
     class ReportNotFoundError < StandardError; end
