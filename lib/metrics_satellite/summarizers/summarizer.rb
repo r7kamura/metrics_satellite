@@ -2,8 +2,14 @@ module MetricsSatellite
   class Summarizer
     include Filer
 
-    def self.summarize
-      new.summarize
+    attr_reader :options
+
+    def self.summarize(options = {})
+      new(options).summarize
+    end
+
+    def initialize(options = {})
+      @options = options
     end
 
     def summarize

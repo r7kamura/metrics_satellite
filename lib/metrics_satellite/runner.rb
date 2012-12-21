@@ -69,7 +69,7 @@ module MetricsSatellite
     end
 
     def summaries
-      summarizers.map(&:summarize).inject({}, &:merge)
+      summarizers.map {|klass| klass.summarize(options) }.inject({}, &:merge)
     end
 
     def reporter
