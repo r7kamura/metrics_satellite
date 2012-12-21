@@ -1,3 +1,5 @@
+require "pathname"
+
 module MetricsSatellite
   class Runner
     attr_reader :options
@@ -7,7 +9,7 @@ module MetricsSatellite
     end
 
     def initialize(argv = ARGV)
-      @options = OptionParser.parse!(argv)
+      @options = OptionParser.parse!(argv).merge(:startup_path => startup_path)
     end
 
     def run
@@ -90,6 +92,10 @@ module MetricsSatellite
 
     def section
       options[:section] || "section"
+    end
+
+    def startup_path
+      Pathname.new(Dir.pwd)
     end
   end
 end

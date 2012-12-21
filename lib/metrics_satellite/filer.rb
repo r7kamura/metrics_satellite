@@ -1,5 +1,4 @@
 require "date"
-require "pathname"
 require "active_support/core_ext/string/inflections"
 
 module MetricsSatellite
@@ -17,7 +16,7 @@ module MetricsSatellite
     end
 
     def directory
-      Pathname.new(reports).join(name)
+      options[:startup_path].join(reports, name)
     end
 
     def create_directory
