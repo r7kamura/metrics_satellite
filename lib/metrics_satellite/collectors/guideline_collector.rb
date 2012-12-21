@@ -1,6 +1,6 @@
 module MetricsSatellite
   class GuidelineCollector < Collector
-    def run
+    def collect
       system(
         "guideline",
         "--no-unused-method",

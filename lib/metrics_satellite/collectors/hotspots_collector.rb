@@ -1,6 +1,6 @@
 module MetricsSatellite
   class HotspotsCollector < Collector
-    def run
+    def collect
       system(
         "hotspots",
         "--repository", repository_path,

@@ -17,9 +17,11 @@ module MetricsSatellite
     end
 
     def directory
-      File.expand_path("../../../reports/#{name}", __FILE__).tap do |path|
-        FileUtils.mkdir_p(path)
-      end
+      File.expand_path("../../../reports/#{name}", __FILE__)
+    end
+
+    def create_directory
+      FileUtils.mkdir_p(directory)
     end
 
     def filename

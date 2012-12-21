@@ -2,7 +2,7 @@ module MetricsSatellite
   class BrakemanCollector < Collector
     EXT = "html"
 
-    def run
+    def collect
       system(
         "brakeman",
         "--output", filepath

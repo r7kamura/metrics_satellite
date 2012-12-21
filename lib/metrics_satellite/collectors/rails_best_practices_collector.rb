@@ -2,7 +2,7 @@ module MetricsSatellite
   class RailsBestPracticesCollector < Collector
     EXT = "html"
 
-    def run
+    def collect
       system(
         "rails_best_practices",
         "--format", "html",
