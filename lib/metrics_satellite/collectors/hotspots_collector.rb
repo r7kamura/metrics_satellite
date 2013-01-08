@@ -13,7 +13,7 @@ module MetricsSatellite
     private
 
     def repository_path
-      options[:git] || "."
+      options[:startup_path].join(options[:git] || ".").to_s
     end
   end
 end
