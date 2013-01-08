@@ -1,16 +1,15 @@
-# -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'metrics_satellite/version'
+require "metrics_satellite/version"
 
 Gem::Specification.new do |gem|
   gem.name          = "metrics_satellite"
   gem.version       = MetricsSatellite::VERSION
   gem.authors       = ["Ryo Nakamura"]
-  gem.email         = ["ryo-nakamura@cookpad.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.email         = ["r7kamura@gmail.com"]
+  gem.description   = "MetricsSatellite is a metrics collector of Rails application"
+  gem.summary       = "Metrics collector of Rails application"
+  gem.homepage      = "https://github.com/r7kamura/metrics_satellite"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
