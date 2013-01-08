@@ -38,13 +38,13 @@ module MetricsSatellite
     end
 
     def collectors
-      [
-        BrakemanCollector,
-        FlayCollector,
-        GuidelineCollector,
-        HotspotsCollector,
-        RailsBestPracticesCollector,
-      ]
+      array = []
+      array << BrakemanCollector           if options[:brakeman]             != false
+      array << FlayCollector               if options[:flay]                 != false
+      array << GuidelineCollector          if options[:guideline]            != false
+      array << HotspotsCollector           if options[:hotspots]             != false
+      array << RailsBestPracticesCollector if options[:rails_best_practices] != false
+      array
     end
 
     def summarizers

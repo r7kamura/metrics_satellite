@@ -4,8 +4,8 @@ module MetricsSatellite
       system(
         "hotspots",
         "--repository", repository_path,
-        "--cutoff", "10",
-        "--time", "14",
+        "--cutoff", options[:hotspots_cutoff] || "10",
+        "--time", options[:hotspots_time] || "14",
         :out => file
       )
     end
