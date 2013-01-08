@@ -1,19 +1,17 @@
 # MetricsSatellite
-Collect metrics and Report summaries.
+Metrics collector of Rails application.
 
 ## Requirements
 * Ruby >= 1.9
 
 ## Installation
 ```
-$ git clone git@github.cookpad.com:ryo-nakamura/metrics_satellite.git
-$ cd metrics_satellite
-$ bundle install
+gem install metrics_satellite
 ```
 
 ## Usage
 ```
-$ ./bin/metrics_satellite
+$ metrics_satellite
 Usage: metrics_satellite [options]
         --type=                      (default:       -) 'collect' or 'post'
         --host=                      (default:       -) GrowthForecast host to send report
@@ -22,7 +20,17 @@ Usage: metrics_satellite [options]
         --git=                       (default:      ./) git repository directory
         --app=                       (default:      ./) application directory
         --reports=                   (default: reports) collected reports directory
+        --guideline-abc-complexity=  (default:      15) threshold of ABC complexity
+        --guideline-long-line=       (default:      80) threshold of long line
+        --guideline-long-method=     (default:      10) threshold of long method
+        --hotspots-cutoff=           (default:      10) threshold of change count
+        --hotspots-time=             (default:      14) time span of git log target
+        --no-brakeman                (default:   false) disable Brakeman
+        --no-flay                    (default:   false) disable Flay
+        --no-guideline               (default:   false) disable Guideline
+        --no-hotspots                (default:   false) disable Hotspots
+        --no-rails-best-practices    (default:   false) disable RailsBestPractices
 
-$ ./bin/metrics_satellite --type collect
-$ ./bin/metrics_satellite --type post --host growthforecast.example.com
+$ metrics_satellite --type collect
+$ metrics_satellite --type post --host growthforecast.example.com
 ```
