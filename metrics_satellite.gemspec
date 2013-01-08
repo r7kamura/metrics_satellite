@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.version       = MetricsSatellite::VERSION
   gem.authors       = ["Ryo Nakamura"]
   gem.email         = ["r7kamura@gmail.com"]
-  gem.description   = "MetricsSatellite is a metrics collector of Rails application"
-  gem.summary       = "Metrics collector of Rails application"
+  gem.description   = "MetricsSatellite collects your rails application metrics"
+  gem.summary       = "Collect your rails application metrics"
   gem.homepage      = "https://github.com/r7kamura/metrics_satellite"
 
   gem.files         = `git ls-files`.split($/)
