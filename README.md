@@ -52,6 +52,8 @@ By default, reports are saved in `./reports/` directory.
 $ metrics_satellite --type collect
 ```
 
+![](http://dl.dropbox.com/u/5978869/image/20130108_170925.png)
+
 ### Post
 Post today's metrics summary to your GrowthForecast server(`collect` should be executed before `post`).  
 By default, a summary is posted to `http://#{host}/api/metrics/section/#{metrics_type}`.
@@ -59,3 +61,5 @@ By default, a summary is posted to `http://#{host}/api/metrics/section/#{metrics
 ```
 $ metrics_satellite --type post --host growthforecast.example.com
 ```
+
+![](http://dl.dropbox.com/u/5978869/image/20130108_170744.png)
